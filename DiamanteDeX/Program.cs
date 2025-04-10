@@ -19,7 +19,27 @@ namespace DiamanteDeX
                 {
                     for (int i = 0; i < entrada; i++)
                     {
-                        
+                        int numX; // número de X por linha
+                        if (i <= entrada / 2)
+                        {
+                            numX = i * 2 + 1; // Indo de cima para o meio
+                        }
+                        else
+                        {
+                            numX = (entrada - i - 1) * 2 + 1; // Indo do  meio para baixo
+                        }
+
+                        int espacos = (entrada - numX) / 2;
+
+                        for (int j = 0; j < espacos; j++) //Criando espaços em branco
+                        {
+                            Console.Write(" ");
+                        }
+
+                        for (int j = 0; j < numX; j++)
+                        {
+                            Console.Write("X"); //imprimindo X baseado no número de linhas
+                        }
 
                         Console.WriteLine(""); // faz separação das linhas
                     }
