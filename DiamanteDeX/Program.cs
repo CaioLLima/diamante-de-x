@@ -33,7 +33,17 @@ namespace DiamanteDeX
                         }
 
                         Console.Write(linha);
-                           
+
+                        if (i < meio) 
+                        {
+                            esquerda--;
+                            direita++;
+                        }
+                        else
+                        {
+                            esquerda++;
+                            direita--;
+                        }
 
                         Console.WriteLine(""); // faz separação das linhas
                     }
