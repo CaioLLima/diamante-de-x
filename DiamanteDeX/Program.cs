@@ -11,9 +11,8 @@ namespace DiamanteDeX
                 Console.Clear();
                 Console.WriteLine("Trabalho 01 - Diamante de X");
                 Console.WriteLine("Insira um número ímpar inteiro: ");
-                int entrada = 5;//int.Parse(Console.ReadLine());
+                int entrada = int.Parse(Console.ReadLine());
                 string[] diamante = new string[entrada];
-                int meio = entrada / 2;
 
                 if (entrada % 2 != 0 && entrada > 1)
                 {
@@ -50,7 +49,11 @@ namespace DiamanteDeX
                     Console.ReadLine();
                     continue;            
                 }
-                Console.ReadLine();
+
+                Console.WriteLine("\nInsira 'S' para sair.");
+                string sair = Console.ReadLine().ToUpper();
+                if(sair == "S")
+                    break;
             }
             
         }
