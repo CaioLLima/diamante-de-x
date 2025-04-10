@@ -13,37 +13,27 @@ namespace DiamanteDeX
                 Console.WriteLine("Insira um número ímpar inteiro: ");
                 int entrada = 5;//int.Parse(Console.ReadLine());
                 string[] diamante = new string[entrada];
+                int meio = entrada / 2;
+                int esquerda = meio;
+                int direita = meio;
 
                 if (entrada % 2 != 0 && entrada > 1)
                 {
                     for (int i = 0; i < entrada; i++)
                     {
+                        string linha = "";
                         for (int j = 0; j < entrada; j++)
                         {                         
-                            diamante[j] = " "; //transforma o 5 x 5 em _
-                            diamante[entrada/2] = "X"; //está criando os X na vertical principal entrada/2
-
-                           /* if (i == 1)
+                            if (j == direita || j == esquerda) // cria grande vertical de X
                             {
-                                diamante[entrada / 2 - 1] = "X";
-                                diamante[entrada / 2 + 1] = "X";
-                            }*/
-                            if (i == entrada / 2) //cria X na grande horizontal
-                            {
-                                for (int p = 0; p < entrada; p++) 
-                                {
-                                    diamante[p] = "X";
-                                }
-                                
+                                linha += "X";
                             }
-                          /*  else if (i == 3)
-                            {
-                                diamante[entrada / 2 - 1] = "X";
-                                diamante[entrada / 2 + 1] = "X";
-                            }*/
-
-                            Console.Write(diamante[j]);  
+                            else
+                                linha += "_";
                         }
+
+                        Console.Write(linha);
+                           
 
                         Console.WriteLine(""); // faz separação das linhas
                     }
