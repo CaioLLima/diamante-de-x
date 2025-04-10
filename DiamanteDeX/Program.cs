@@ -20,26 +20,41 @@ namespace DiamanteDeX
                     for (int i = 0; i < entrada; i++)
                     {
                         for (int j = 0; j < entrada; j++)
-                        {
-                            diamante[j] = "_";
-                            diamante[entrada / 2] = "X";
+                        {                         
+                            diamante[j] = " "; //transforma o 5 x 5 em _
 
+                            diamante[2] = "X"; //está criando os X na vertical principal entrada/2
 
-                            // diamante[0] = "O";
-                            if (diamante[i] == diamante[2])
+                            if (i==1)
                             {
-                                diamante[j] = diamante[i];
-                                //Console.Write(diamante[i]);
+                                diamante[entrada/2 -1] = "X";
+                                diamante[entrada / 2 + 1] = "X";
+                            }
+                            if (i == 2)
+                            {
+                                diamante[entrada / 2 - 1] = "X";
+                                diamante[entrada / 2 + 1] = "X";
+                                diamante[entrada / 2 - 2] = "X";
+                                diamante[entrada / 2 + 2] = "X";
+                            }
+                            if (i == 3)
+                            {
+                                diamante[entrada / 2 - 1] = "X";
+                                diamante[entrada / 2 + 1] = "X";
                             }
                             
+
+
 
                             //diamante[entrada - 1] = "X";
                             Console.Write(diamante[j]);
                             
                         }
                         diamante[i] = "C";
-                        diamante[entrada / 2] = "X";
-                        Console.WriteLine("");
+                       // diamante[entrada / 2] = "X";
+
+                        
+                        Console.WriteLine(""); // faz separação das linhas
 
                     }
 
