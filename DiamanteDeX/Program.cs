@@ -10,9 +10,12 @@ namespace DiamanteDeX
             {
                 Console.Clear();
                 Console.WriteLine("Trabalho 01 - Diamante de X");
-                Console.WriteLine("Insira um número ímpar inteiro: ");
-                int entrada = int.Parse(Console.ReadLine());
-              
+                int entrada;
+                while (!int.TryParse(Console.ReadLine(), out entrada))
+                {
+                    Console.WriteLine("Por favor, insira um número válido:");
+                }
+
                 if (entrada % 2 != 0 && entrada >= 1)
                 {
                     for (int i = 0; i < entrada; i++)
