@@ -9,17 +9,12 @@ namespace DiamanteDeX
         {
             while (true)
             {
-                //cabeçalho
                 MostrarCabeçalho();
 
-                //obter numero
                 int entrada = ObterNumero();
 
-
-                //processamento
-                if (entrada % 2 != 0 && entrada >= 1) // não pode ser par e não pode ser menor ou igual a um
+                if (entrada % 2 != 0 && entrada >= 1) 
                 {
-                    //gera linhas
                     CalculaX(entrada);
                 }
                 else
@@ -27,7 +22,6 @@ namespace DiamanteDeX
                     Console.WriteLine("Entrada inválida, tente novamente.");
                     Console.ReadLine();
                 }
-
                 Console.ReadLine();
             }   
         }
@@ -51,19 +45,17 @@ namespace DiamanteDeX
 
         static int CalculaX(int entrada)
         {
-            int numX = 0; // número de X por linha
-            for (int i = 0; i < entrada; i++)  //loop principal para gerar linhas
+            int numX = 0;
+            for (int i = 0; i < entrada; i++) 
             {          
-                //calculo desenho
-                if (i <= entrada / 2) //se a linha for menor que a metade do diamante
+                if (i <= entrada / 2)
                 {
-                    numX = i * 2 + 1; // calculo de quantos X vai ter na linha
+                    numX = i * 2 + 1; 
                 }
-                else //se a linha for maior que a metade do diamante
+                else 
                 {
-                    numX = (entrada - i - 1) * 2 + 1; // Indo do  meio para baixo
+                    numX = (entrada - i - 1) * 2 + 1;
                 }
-                //calcula espaços
                 int espacos = EspacosBrancos(numX, entrada);
                 MostrarDesenho(numX, espacos);
             }
@@ -72,24 +64,23 @@ namespace DiamanteDeX
 
         static int EspacosBrancos(int numX, int entrada)
         {
-            int espacos = (entrada - numX) / 2; //calculo saber quantos espaços em branco  vai ter
+            int espacos = (entrada - numX) / 2;
             return espacos;
         }
 
         static void MostrarDesenho(int numX, int espacos)
         {
-            //mostrar desenho
-            for (int j = 0; j < espacos; j++) //Criando espaços em branco
+            for (int j = 0; j < espacos; j++)
             {
                 Console.Write(" ");
             }
 
             for (int j = 0; j < numX; j++)
             {
-                Console.Write("X"); //imprimindo X baseado no número de X que vai ter na linha
+                Console.Write("X");
             }
 
-            Console.WriteLine(""); // faz separação das linhas
+            Console.WriteLine(""); 
         }
     }
 }
