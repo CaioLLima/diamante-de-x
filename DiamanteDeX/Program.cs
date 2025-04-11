@@ -41,7 +41,11 @@ namespace DiamanteDeX
         static int ObterNumero()
         {
             Console.WriteLine("Insira um número ímpar inteiro: ");
-            int entrada = 5;// int.Parse(Console.ReadLine());
+            int entrada;
+            while (!int.TryParse(Console.ReadLine(), out entrada))
+            {
+                Console.WriteLine("Por favor, insira um número válido:");
+            }
             return entrada;
         }
 
